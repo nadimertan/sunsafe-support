@@ -35,7 +35,10 @@
     background: linear-gradient(135deg, var(--amber), var(--coral));
     color: #fff; font-weight: 700; text-decoration: none; border-radius: 16px;
   }
-  a.btn.store { margin-top: 0; margin-bottom: 4px; }
+  /* Apple requires the badge unaltered, with clear space of at least a tenth
+     of its height on every side; black on light backgrounds, white on dark. */
+  a.store { display: inline-block; margin-bottom: 6px; }
+  a.store img { display: block; width: 156px; height: auto; }
   a.btn.ghost {
     background: none; color: var(--coral);
     box-shadow: inset 0 0 0 2px var(--coral);
@@ -65,7 +68,12 @@
   </div>
   <p class="tagline">UV index &amp; personal sunburn timer — know your safe time in the sun.</p>
 
-  <a class="btn store" href="https://apps.apple.com/app/sunsafe-uv-index-sun-timer/id6792350740">Download on the App Store</a>
+  <a class="store" href="https://apps.apple.com/app/sunsafe-uv-index-sun-timer/id6792350740">
+    <picture>
+      <source srcset="app-store-badge-white.svg" media="(prefers-color-scheme: dark)">
+      <img src="app-store-badge-black.svg" alt="Download SunSafe on the App Store" width="156" height="52">
+    </picture>
+  </a>
 
   <h2>Frequently asked</h2>
 
